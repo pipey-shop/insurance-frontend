@@ -6,7 +6,6 @@ pipeline {
   stages {
     stage('Pull Request') {
       when {
-        beforeAgent true
         branch 'pr-*'
       }
       stages {
