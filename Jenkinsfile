@@ -17,12 +17,13 @@ pipeline {
           }
         }
         stage('Test') {
+          agent any
           environment {
             FAVORITE_COLOR = 'BLUE'
             SERVICE_CREDS = credentials('example-service-username-password')
           }
           steps {
-            echo "TODO - test $FAVORITE_COLOR with SERVICE_CREDS: username=$SERVICE_CREDS_USR password=$SERVICE_CREDS_PSW"
+            sh 'echo TODO - test $FAVORITE_COLOR with SERVICE_CREDS: username=$SERVICE_CREDS_USR password=$SERVICE_CREDS_PSW'
           }
         }
       }
@@ -47,6 +48,3 @@ pipeline {
     }
   }
 }
-
-
-
